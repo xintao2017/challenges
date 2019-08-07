@@ -14,6 +14,7 @@ class TestGame(unittest.TestCase):
         self.draw = draw_letters()
 
     def test_draw_letters(self):
+        print(self.draw)
         letter_str = ''.join(self.draw)
         self.assertRegex(letter_str, r'^[A-Z]{%s}$' % NUM_LETTERS)
 
@@ -49,4 +50,4 @@ class TestGame(unittest.TestCase):
         self.assertRaises(ValueError, _validation, word, draw)
 
 if __name__ == "__main__":
-   unittest.main() 
+   unittest.main()
