@@ -1,3 +1,5 @@
+import re
+
 TOP_NUMBER = 10
 RSS_FEED = 'rss.xml'
 SIMILAR = 0.87
@@ -6,7 +8,8 @@ SIMILAR = 0.87
 def get_tags():
     """Find all tags in RSS_FEED.
     Replace dash with whitespace."""
-    pass
+    with open(RSS_FEED) as f:
+        return re.findall(r"^<[a-z]>$", f.read())
 
 
 def get_top_tags(tags):
